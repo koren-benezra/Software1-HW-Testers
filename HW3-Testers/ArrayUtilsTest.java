@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +9,6 @@ class ArrayUtilsTest {
 
     @Test
     void shiftArrayCyclic() {
-
 
         assertArrayEquals(
 
@@ -43,6 +43,7 @@ class ArrayUtilsTest {
                 new int[]{},
                 ArrayUtils.shiftArrayCyclic(new int[]{}, 3, 'R'));
 
+
         // ------------------------ New Tests ------------------------ //
 
         assertArrayEquals(
@@ -52,6 +53,14 @@ class ArrayUtilsTest {
         assertArrayEquals(
                 new int[]{5, 6, 1, 2, 3, 4},
                 ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5, 6}, 2, 'R'));
+
+        assertArrayEquals(
+                new int[]{1, 2, 3, 4, 5, 6},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5, 6}, 0, 'R'));
+
+        assertArrayEquals(
+                new int[]{},
+                ArrayUtils.shiftArrayCyclic(new int[]{}, 10000, 'R'));
     }
 
 
