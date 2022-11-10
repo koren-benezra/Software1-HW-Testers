@@ -12,37 +12,46 @@ class ArrayUtilsTest {
 
         assertArrayEquals(
 
-                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, -1, 'R'),
-                new int[]{2, 3, 4, 5, 1});
+                new int[]{2, 3, 4, 5, 1},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, -1, 'R'));
 
         assertArrayEquals(
-                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, 1, 'R'),
-                new int[]{5, 1, 2, 3, 4});
+                new int[]{5, 1, 2, 3, 4},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, 1, 'R'));
 
         assertArrayEquals(
-                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, 1, 'r'),
-                new int[]{1, 2, 3, 4, 5});
+                new int[]{1, 2, 3, 4, 5},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, 1, 'r'));
 
         assertArrayEquals(
-                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, -2, 'g'),
-                new int[]{1, 2, 3, 4, 5});
+                new int[]{1, 2, 3, 4, 5},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, -2, 'g'));
 
         assertArrayEquals(
-                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, 3, 'L'),
-                new int[]{4, 5, 1, 2, 3});
+                new int[]{4, 5, 1, 2, 3},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, 3, 'L'));
 
         assertArrayEquals(
-                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, -3, 'L'),
-                new int[]{3, 4, 5, 1, 2});
+                new int[]{3, 4, 5, 1, 2},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5}, -3, 'L'));
 
         assertArrayEquals(
-                ArrayUtils.shiftArrayCyclic(new int[]{0, 8, 9, 5, 6}, 6, 'L'),
-                new int[]{8, 9, 5, 6, 0});
+                new int[]{8, 9, 5, 6, 0},
+                ArrayUtils.shiftArrayCyclic(new int[]{0, 8, 9, 5, 6}, 6, 'L'));
 
         assertArrayEquals(
-                ArrayUtils.shiftArrayCyclic(new int[]{}, 3, 'R'),
-                new int[]{});
+                new int[]{},
+                ArrayUtils.shiftArrayCyclic(new int[]{}, 3, 'R'));
 
+        // ------------------------ New Tests ------------------------ //
+
+        assertArrayEquals(
+                new int[]{4, 5, 6, 1, 2, 3},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5, 6}, 3, 'R'));
+
+        assertArrayEquals(
+                new int[]{5, 6, 1, 2, 3, 4},
+                ArrayUtils.shiftArrayCyclic(new int[]{1, 2, 3, 4, 5, 6}, 2, 'R'));
     }
 
 
